@@ -1,0 +1,20 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Facturation</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="isAuth" class="menu-container">
+          <a routerLink="/dashboard">{{user.name}}</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+            <a (click)="logout()">Logout</a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
