@@ -15,13 +15,13 @@ export const UserSchema = new Schema<User>({
     password: {type: String, required: true},
     address: {type: String, required: true},
     isAdmin: {type: Boolean, required: true},
-}, //to set virtuals to true w need to add options
+}, 
     {
-    timestamps: true, //set the time automatically when create or update 
-    toJSON:{ //to get _id
+    timestamps: true, 
+    toJSON:{ 
         virtuals: true
     },
-    toObject:{ // get value to work on it 
+    toObject:{ 
         virtuals: true
     }
 });

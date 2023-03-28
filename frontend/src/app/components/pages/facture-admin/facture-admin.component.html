@@ -1,0 +1,40 @@
+<a class="btn btn-primary" href="#" (click)="newFacture($event)">newFacture</a>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Tous les factures</h4>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Reference</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Prix</th>
+            <th scope="col">Payer</th>
+            <th scope="col">DateD</th>
+            <th scope="col">DateF</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let facture of factures">
+            <td>{{facture.name}}</td>
+            <td>{{facture.email}}</td>
+            <td>{{facture.address}}</td>
+            <td>{{facture.reference}}</td>
+            <td>{{facture.quantity}}</td>
+            <td>{{facture.prix}}</td>
+            <td>{{facture.payer}}</td>
+            <td>{{facture.dateD}}</td>
+            <td>{{facture.dateF}}</td>
+            <td><button class="btn btn-danger" (click)="supprimer(facture)" style="width:90px;font-size: 12px;">Supprimer</button>
+              <button class="btn btn-primary" (click)="edit(facture)" style="width:90px;font-size: 12px;">Modifier</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

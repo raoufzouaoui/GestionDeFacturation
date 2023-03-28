@@ -15,3 +15,38 @@
   justify-content: center;
   align-items: center;
 }
+
+body{
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(
+  115deg, #009ddc, rgba(238, 242, 234, 0.7) ), url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+  font-family: "poppins";
+
+}
+
+.details{
+  margin-top: 10px;
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsla(205, 46%, 30%,1 );
+  background: linear-gradient(90deg, hsla(205, 46%, 30%,1 )0%,hsla(260, 29%, 36%,1 )100%);
+}
+html{
+  scroll-behavior: smooth;
+}
+
+.card label,h1,h6{
+  color: #fff;
+}
+
+label{
+  color:#fff;
+}

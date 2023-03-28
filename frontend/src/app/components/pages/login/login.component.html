@@ -1,30 +1,41 @@
-<div class="container">
-  <div class="details">
-    <app-title title="Login"></app-title>
-    <form [formGroup]="loginForm" (ngSubmit)="login()" >
-      <text-input
-            [control]="fc.email"
-            [showErrorsWhen]="isSubmitted"
-            type="email"
-            label="Email"
-            ></text-input>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-            <text-input
-            [control]="fc.password"
-            [showErrorsWhen]="isSubmitted"
-            type="password"
-            label="Password"
-            ></text-input>
+</head>
+<body>
+  <div class="container">
+  <app-title style="color: white;" title="Login"></app-title>
+    <div class="details">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" >
+        <text-input
+              [control]="fc.email"
+              [showErrorsWhen]="isSubmitted"
+              type="email"
+              label="Email"
+              ></text-input>
 
-      <div class="button">
-        <button type="submit">Login</button>
-      </div>
-      <div class="register">
-        New user? &nbsp;
-        <a routerLink="/register" [queryParams]="{returnUrl : returnUrl}">
-          Register here
-        </a>
-      </div>
-    </form>
+              <text-input
+              [control]="fc.password"
+              [showErrorsWhen]="isSubmitted"
+              type="password"
+              label="Password"
+              ></text-input>
+
+        <div class="button">
+          <button type="submit" class="btn btn-primary" >Login</button>
+        </div>
+        <div class="register">
+        <span style="color: white;">  New user? &nbsp; </span>
+          <a routerLink="/register" [queryParams]="{returnUrl : returnUrl}">
+            Register here
+          </a>
+        </div>
+      </form>
+    </div>
   </div>
-</div>
+
+</body>

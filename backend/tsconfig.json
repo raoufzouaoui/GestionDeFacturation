@@ -6,7 +6,8 @@
       "outDir": "./built",
       "experimentalDecorators": true,
       "emitDecoratorMetadata": true,
-      "esModuleInterop": true
+      "esModuleInterop": true,
+      "typeRoots" : ["./src/types", "./node_modules/@types"]
     },
     "include": ["src/**/*"],
 }

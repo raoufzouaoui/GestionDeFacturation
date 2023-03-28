@@ -1,1 +1,2 @@
 const BAD_REQUEST = 400;
+const HTTP_UNAUTHORIZED = 401;

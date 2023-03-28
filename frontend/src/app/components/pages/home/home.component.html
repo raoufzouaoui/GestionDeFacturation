@@ -1,1 +1,38 @@
-<app-header></app-header>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Tous les factures</h4>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Reference</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Prix</th>
+            <th scope="col">DateD</th>
+            <th scope="col">DateF</th>
+            <th scope="col">Payer</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let facture of factures">
+            <td>{{facture.name}}</td>
+            <td>{{facture.email}}</td>
+            <td>{{facture.address}}</td>
+            <td>{{facture.reference}}</td>
+            <td>{{facture.quantity}}</td>
+            <td>{{facture.prix}}</td>
+            <td>{{facture.dateD}}</td>
+            <td>{{facture.dateF}}</td>
+            <td *ngIf="facture.payer==='Payé'">{{facture.payer}}</td>
+            <td><a routerLink="/payment" (click)="payer(facture.id)" *ngIf="facture.payer==='Non Payer'">{{facture.payer}}</a></td>
+
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>

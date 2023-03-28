@@ -20,7 +20,7 @@ export class LoginComponent {
           password:['',Validators.required]
         });
 
-        this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
+        // this.returnUrl = this.activatedRoute.snapshot.queryParams.returnUrl;
   }
 
   get fc(){
@@ -32,7 +32,12 @@ export class LoginComponent {
     if(this.loginForm.invalid) return;
 
     this.userService.login({email:this.fc.email.value,password:this.fc.password.value}).subscribe(() => {
-        this.router.navigateByUrl(this.returnUrl);
+      if(this.fc.email.value==="admin@gmail.com" && this.fc.password.value==="admin"){
+        this.router.navigateByUrl('facture-admin');
+      }else{
+        this.router.navigate(['/']);
+      }
+
     })
   }
 

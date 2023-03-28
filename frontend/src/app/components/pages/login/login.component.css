@@ -7,7 +7,18 @@
   }
 
   .details{
+    border-radius: 2%;
     width: 28rem;
+    margin-top: 10px;
+    border: none;
+    width: 500px;
+    padding: 40px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: hsla(205, 46%, 30%,1 );
+    background: linear-gradient(90deg, hsla(205, 46%, 30%,1 )0%,hsla(260, 29%, 36%,1 )100%);
   }
 
   form{
@@ -24,4 +35,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  body {
+    background-image: url("https://img.freepik.com/photos-gratuite/business-finance-homme-calculant-numeros-budget-factures-conseiller-financier-travaillant_1423-119.jpg");
   }

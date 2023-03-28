@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="content">
+    <app-title title="Facture Summary" fontSize="1.6rem"></app-title>
+    <!-- <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Address</th>
+          <th scope="col">Reference</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Prix</th>
+          <th scope="col">DateD</th>
+          <th scope="col">DateF</th>
+          <th scope="col">Payer</th>
+        </tr>
+      </thead>
+      <tbody>
+         <tr *ngFor="let fact of facture">
+          <td>{{facture.name}}</td>
+           <td>{{fact.email}}</td>
+          <td>{{fact.address}}</td>
+          <td>{{fact.reference}}</td>
+          <td>{{fact.quantity}}</td>
+          <td>{{fact.prix}}</td>
+          <td>{{fact.dateD}}</td>
+          <td>{{fact.dateF}}</td>
+        </tr>
+      </tbody>
+
+    </table> -->
+    <div >
+      <div>
+        <h3><b>Name:</b>  {{facture.name}}</h3>
+
+        <h3><b>Email:</b> {{facture.email}}</h3>
+
+        <h3><b>Address:</b>  {{facture.address}}</h3>
+
+        <h3><b>Date debut:</b>  {{facture.dateD}}</h3>
+
+        <h3><b>Date fin:</b>  {{facture.dateF}}</h3>
+
+        <h3><b>Quantity:</b>  {{facture.quantity}}</h3>
+
+        <h3><b>Prix:</b>   {{facture.prix}}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="buttons-container">
+    <div class="buttons" >
+       <paypal-button [facture]="facture"></paypal-button>
+    </div>
+  </div>
+</div>
+

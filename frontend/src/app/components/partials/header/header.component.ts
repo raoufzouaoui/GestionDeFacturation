@@ -28,4 +28,7 @@ export class HeaderComponent implements OnInit {
   get isAuth(){
     return this.user.token;
   }
+  get isAdmin(){
+    return this.user.isAdmin;
+  }
 }

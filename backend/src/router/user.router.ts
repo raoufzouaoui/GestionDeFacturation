@@ -1,7 +1,5 @@
-
 import {Router} from 'express';
 import jwt from "jsonwebtoken";
-import { sample_users } from '../data';
 import asyncHandler from 'express-async-handler';
 import { User, UserModel } from '../models/user.model';
 import bcrypt from 'bcryptjs';
@@ -11,9 +9,9 @@ const router = Router();
 router.post("/login",asyncHandler(
     async (req,res)=>{
         const {email,password} = req.body;
-        const user = await UserModel.findOne({email,password});
+        const user = await UserModel.findOne({email});
      
-        if(user){
+        if(user && (await bcrypt.compare(password,user.password))){
          res.send(generateTokenReponse(user));
         }else{
          res.status(400).send("User name or password is not valid!");
@@ -48,19 +46,21 @@ router.post("/login",asyncHandler(
 ))
 
 
-
-
- const generateTokenReponse = (user:any) =>{
-     const token = jwt.sign({
-         email:user.email,isAdmin:user.isAdmin
-     },"SomeRandomText",{
-         expiresIn:"30d"
-     });
- 
-     user.token=token;
- 
-     return user;
- 
- }
+const generateTokenReponse = (user : User) => {
+  const token = jwt.sign({
+    id: user.id, email:user.email, isAdmin: user.isAdmin
+  },process.env.JWT_SECRET!,{
+    expiresIn:"30d"
+  });
+  
+  return {
+    id: user.id,
+    email: user.email,
+    name: user.name,
+    address: user.address,
+    isAdmin: user.isAdmin,
+    token: token
+  };
+}
 
  export default router;
