@@ -17,4 +17,5 @@ This is a web application built with Node.js, Angular, MongoDB, and JWT authenti
 - Start the server: npm start
 - Start the client: cd client && ng serve
 
-## Note: You will also need to set up a MongoDB database and configure the config.json file with your MongoDB URI and PayPal credentials.
+## Note:
+  You will also need to set up a MongoDB database and configure the config.json file with your MongoDB URI and PayPal credentials.
